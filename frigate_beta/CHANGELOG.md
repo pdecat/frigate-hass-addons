@@ -2,6 +2,10 @@
 
 - 0.8.0 Release Candidate 6
 
+### 1.7.1
+
+- 0.8.0 Release Candidate 5 dev
+
 ### 1.7
 
 - 0.8.0 Release Candidate 5
