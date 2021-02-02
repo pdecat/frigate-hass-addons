@@ -1,3 +1,7 @@
+### 1.9.3
+
+- Pin numpy to the same 1.19.4 version that frigate pins, see https://github.com/blakeblackshear/frigate/blob/v0.8.1/docker/Dockerfile.wheels#L27
+
 ### 1.9.2
 
 - Move ARG BUILD_ARCH=amd64 to top of Dockerfile
