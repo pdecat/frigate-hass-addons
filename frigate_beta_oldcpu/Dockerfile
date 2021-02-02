@@ -17,7 +17,8 @@ RUN apt-get -qq update \
 RUN git clone https://github.com/tensorflow/tensorflow.git
 
 RUN pip3 install -U \
-    numpy \
+    # pin to the same version that frigate pins, see https://github.com/blakeblackshear/frigate/blob/v0.8.1/docker/Dockerfile.wheels#L27
+    numpy==1.19.4 \
     pybind11
 
 RUN bash tensorflow/tensorflow/lite/tools/make/download_dependencies.sh
