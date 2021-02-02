@@ -1,3 +1,5 @@
+ARG BUILD_ARCH=amd64
+
 FROM ubuntu:20.04 as build
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -21,7 +23,6 @@ RUN pip3 install -U \
 RUN bash tensorflow/tensorflow/lite/tools/make/download_dependencies.sh
 RUN bash tensorflow/tensorflow/lite/tools/pip_package/build_pip_package.sh
 
-ARG BUILD_ARCH=amd64
 FROM blakeblackshear/frigate:0.8.1-${BUILD_ARCH}
 
 COPY --from=build /tensorflow/tensorflow/lite/tools/pip_package/gen/tflite_pip/python3/dist/tflite_runtime-2.5.0-cp38-cp38-linux_x86_64.whl /wheels/
