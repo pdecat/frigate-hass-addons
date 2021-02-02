@@ -1,5 +1,5 @@
 {
-    "name": "Frigate hass.io addons",
-    "url": "https://github.com/blakeblackshear/frigate-hass-addons",
-    "maintainer": "blakeblackshear"
+    "name": "Frigate hass.io addons (pdecat fork)",
+    "url": "https://github.com/pdecat/frigate-hass-addons",
+    "maintainer": "pdecat"
 }
