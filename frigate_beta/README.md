@@ -6,7 +6,9 @@ This is an old version. There is no current beta release. Please switch to the s
 
 NVR with realtime local object detection for IP cameras.
 
-[Configuration Reference](https://github.com/blakeblackshear/frigate/tree/release-0.8.0#configuration)
+You must create a config file as `frigate.yml` in the root of your HomeAssistant configuration directory.
+
+[Documentation](https://github.com/blakeblackshear/frigate/tree/release-0.8.2)
 
 [Frigate]: https://github.com/blakeblackshear/frigate
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
