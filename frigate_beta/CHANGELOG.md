@@ -1,5 +1,9 @@
 ### 1.11.1
 
+- Update devices to new format to remove deprecation warning
+
+### 1.11.0
+
 - Fixes for supervisor 2021.02.5
 - Configuration moved to homeassistant config directory as `frigate.yml`
 - 0.8.2 dev4
