@@ -1,3 +1,7 @@
+### 1.9.6
+
+- Downgrade bazel from 4.0.0 to 3.20 to build libedgetpu.so
+
 ### 1.9.5
 
 - Actually rebuild libedgetpu.so on target platform
