@@ -24,7 +24,26 @@ RUN pip3 install -U \
 RUN bash tensorflow/tensorflow/lite/tools/make/download_dependencies.sh
 RUN bash tensorflow/tensorflow/lite/tools/pip_package/build_pip_package.sh
 
+# TODO: build and install libedgetpu before tflite
+RUN git clone https://github.com/google-coral/libedgetpu.git
+
+RUN echo "deb [arch=amd64] https://storage.googleapis.com/bazel-apt stable jdk1.8" > /etc/apt/sources.list.d/bazel.list \
+    && curl -s https://storage.googleapis.com/bazel-apt/doc/apt-key.pub.gpg | apt-key add - \
+    && apt-get -qq update \
+    && apt-get -qq install bazel
+
+RUN apt-get -qq install libusb-1.0-0-dev xxd zlib1g-dev
+
+RUN cd /libedgetpu && make libedgetpu
+
+RUN apt-get -qq install debhelper
+RUN cd /libedgetpu && make deb
+RUN dpkg -i /libedgetpu1-max_14.0_amd64.deb
+
 FROM blakeblackshear/frigate:0.8.1-${BUILD_ARCH}
 
 COPY --from=build /tensorflow/tensorflow/lite/tools/pip_package/gen/tflite_pip/python3/dist/tflite_runtime-2.5.0-cp38-cp38-linux_x86_64.whl /wheels/
 RUN pip3 install --upgrade /wheels/tflite_runtime-2.5.0-cp38-cp38-linux_x86_64.whl
+
+COPY --from=build /libedgetpu1-max_14.0_amd64.deb /
+RUN dpkg -i /libedgetpu1-max_14.0_amd64.deb

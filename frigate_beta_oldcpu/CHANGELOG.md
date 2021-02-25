@@ -1,3 +1,7 @@
+### 1.9.5
+
+- Actually rebuild libedgetpu.so on target platform
+
 ### 1.9.4
 
 - Update devices to new format to remove deprecation warning
