@@ -1,3 +1,11 @@
+### 1.9.5
+
+- Actually rebuild libedgetpu.so on target platform
+
+### 1.9.4
+
+- Update devices to new format to remove deprecation warning
+
 ### 1.9.3
 
 - Pin numpy to the same 1.19.4 version that frigate pins, see https://github.com/blakeblackshear/frigate/blob/v0.8.1/docker/Dockerfile.wheels#L27
