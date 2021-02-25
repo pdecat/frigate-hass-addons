@@ -14,6 +14,7 @@ RUN apt-get -qq update \
     curl unzip \
     swig libjpeg-dev zlib1g-dev
 
+# TODO: checkout a known working revision
 RUN git clone https://github.com/tensorflow/tensorflow.git
 
 RUN pip3 install -U \
@@ -25,12 +26,13 @@ RUN bash tensorflow/tensorflow/lite/tools/make/download_dependencies.sh
 RUN bash tensorflow/tensorflow/lite/tools/pip_package/build_pip_package.sh
 
 # TODO: build and install libedgetpu before tflite
+# TODO: checkout a known working revision
 RUN git clone https://github.com/google-coral/libedgetpu.git
 
 RUN echo "deb [arch=amd64] https://storage.googleapis.com/bazel-apt stable jdk1.8" > /etc/apt/sources.list.d/bazel.list \
     && curl -s https://storage.googleapis.com/bazel-apt/doc/apt-key.pub.gpg | apt-key add - \
     && apt-get -qq update \
-    && apt-get -qq install bazel
+    && apt-get -qq install bazel=3.2.0
 
 RUN apt-get -qq install libusb-1.0-0-dev xxd zlib1g-dev
 
@@ -38,7 +40,6 @@ RUN cd /libedgetpu && make libedgetpu
 
 RUN apt-get -qq install debhelper
 RUN cd /libedgetpu && make deb
-RUN dpkg -i /libedgetpu1-max_14.0_amd64.deb
 
 FROM blakeblackshear/frigate:0.8.1-${BUILD_ARCH}
 
