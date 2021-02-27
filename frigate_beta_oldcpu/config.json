@@ -1,6 +1,6 @@
 {
   "name": "Frigate NVR Beta (old x86_64 CPU without AVX)",
-  "version": "1.9.6",
+  "version": "1.9.7",
   "panel_icon": "mdi:cctv",
   "slug": "frigate-beta-oldcpu",
   "description": "NVR with realtime local object detection for IP cameras",
