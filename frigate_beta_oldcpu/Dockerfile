@@ -36,6 +36,9 @@ RUN echo "deb [arch=amd64] https://storage.googleapis.com/bazel-apt stable jdk1.
 
 RUN apt-get -qq install libusb-1.0-0-dev xxd zlib1g-dev
 
+RUN cd /libedgetpu && bazel fetch --experimental_repo_remote_exec @coral_crosstool//...
+RUN sed -i 's/"-msse4.2",//g' $HOME/.cache/bazel/*/*/external/coral_crosstool/cc_toolchain_config.bzl.tpl
+RUN printf "build --copt=-march=native\nbuild --host_copt=-march=native\n" > ~/.bazelrc
 RUN cd /libedgetpu && make libedgetpu
 
 RUN apt-get -qq install debhelper
