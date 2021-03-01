@@ -1,3 +1,12 @@
+### 1.12.1
+- Use new tmpfs config option
+- Update to 0.8.3
+- Update device config to avoid protection mode to be disabled for Coral access
+- Add additional devices in hopes that protection mode can be enabled on RPi with hwaccel
+- Update to avoid deprecation warning for new devices config
+- Fixes for supervisor 2021.02.5
+- Configuration moved to homeassistant config directory as `frigate.yml`
+
 ### 1.9.7
 
 - Alter bazel compilation options to build libedgetpu.so for target platform
