@@ -1,8 +1,8 @@
 {
-  "name": "Frigate NVR Beta (old x86_64 CPU without AVX)",
-  "version": "1.9.7",
+  "name": "Frigate NVR (old x86_64 CPU without AVX)",
+  "version": "1.12.1",
   "panel_icon": "mdi:cctv",
-  "slug": "frigate-beta-oldcpu",
+  "slug": "frigate-oldcpu",
   "description": "NVR with realtime local object detection for IP cameras",
   "url": "https://github.com/blakeblackshear/frigate",
   "startup": "application",
@@ -22,10 +22,13 @@
   },
   "host_network": false,
   "devices": [
-    "/dev/bus/usb",
     "/dev/dri/renderD128",
-    "/dev/apex_0"
+    "/dev/apex_0",
+    "/dev/dri/card0",
+    "/dev/vchiq"
   ],
+  "usb": true,
+  "tmpfs": true,
   "full_access": true,
   "environment": {
     "CONFIG_FILE": "/config/frigate.yml"

@@ -1,4 +1,6 @@
-Frigate brings realtime object detection to any camera video feed supported by ffmpeg. More detailed docs are maintained [here](https://github.com/blakeblackshear/frigate/tree/release-0.8.0).
+You must create a config file as `frigate.yml` in the root of your HomeAssistant configuration directory.
+
+Frigate brings realtime object detection to any camera video feed supported by ffmpeg. More detailed docs are maintained [here](https://github.com/blakeblackshear/frigate).
 
 ## Required Dependencies
 - MQTT: Frigate communicates via MQTT
