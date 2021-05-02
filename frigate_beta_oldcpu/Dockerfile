@@ -38,7 +38,7 @@ RUN pip3 install -U \
 RUN bash tensorflow/tensorflow/lite/tools/make/download_dependencies.sh
 RUN bash tensorflow/tensorflow/lite/tools/pip_package/build_pip_package.sh
 
-FROM blakeblackshear/frigate:0.8.3-${BUILD_ARCH}
+FROM blakeblackshear/frigate:0.8.4-${BUILD_ARCH}
 COPY --from=build_libedgetpu /libedgetpu1-max_14.0_amd64.deb /
 RUN dpkg -i /libedgetpu1-max_14.0_amd64.deb
 COPY --from=build_tflite /tensorflow/tensorflow/lite/tools/pip_package/gen/tflite_pip/python3/dist/tflite_runtime-2.5.0-cp38-cp38-linux_x86_64.whl /wheels/
