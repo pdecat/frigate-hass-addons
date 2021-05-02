@@ -1,6 +1,6 @@
 {
   "name": "Frigate NVR (old x86_64 CPU without AVX)",
-  "version": "1.12.1",
+  "version": "1.13.1",
   "panel_icon": "mdi:cctv",
   "slug": "frigate-oldcpu",
   "description": "NVR with realtime local object detection for IP cameras",

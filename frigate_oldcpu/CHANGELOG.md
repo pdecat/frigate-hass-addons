@@ -1,3 +1,6 @@
+### 1.13.1
+- Update to 0.8.4
+
 ### 1.12.1
 - Use new tmpfs config option
 - Update to 0.8.3
